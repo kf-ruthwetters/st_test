@@ -7,7 +7,6 @@ import plotly.express as px
 # Set the page title
 st.set_page_config(page_title="Enh Basic Dashboard", layout="wide")
 
-
 #### GENERATING A SIMPLE DATASET ####
 # Create a sample dataset
 np.random.seed(42)  # For reproducibility
@@ -39,7 +38,12 @@ st.markdown(
 )
 
 #Displays a company logo
-st.sidebar.image("logo.png", caption="Company Logo")
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(script_dir, "logo.png")
+st.sidebar.image(logo_path, caption="Company Logo")
+#st.sidebar.image("logo.png", caption="Company Logo")
+
 # Stylized filter header
 st.sidebar.markdown("<h3 style='color: purple;'>Filters</h3>", unsafe_allow_html=True) #customised 
 
